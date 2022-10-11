@@ -1,0 +1,119 @@
+
+    body {
+        margin: 0;
+        height: 100%;
+        width:100%;
+
+    }
+    .Parent-div{
+      position:relative;width:100%;
+    }
+    .Header-div{
+      position:absolute;
+      z-index:100;
+      left:0px;
+      top:0px;
+      width:100%;
+      height:100;
+      background:linear-gradient(#A0AFB9  , transparent);
+    }
+    .Sub-div{
+      left:0px;
+      top:100px;
+      z-index:80;
+      height:100%;
+    }
+    .Selector{
+      height: 100%;
+      background: linear-gradient(to right,#A0AFB9,transparent);
+      width: 13%;
+      text-align: left;
+      float:left;
+  }
+    .Title{
+      font-family:verdana;
+      font-size:24px;
+      text-indent:4px;
+      text-align: justify;
+    }
+    .TitleColumn{
+      font-family:verdana;
+      font-size:20px;
+      text-indent:4px;
+      text-align: justify;
+    }
+    .TitleText{
+      font-family:verdana;
+      font-size:20px;
+      text-indent:40px;
+      text-align: justify;
+    }
+    .SubTitle{
+      font-family:verdana;
+      font-size:14px;
+      text-indent:4px;
+      text-align: justify;
+    }
+    .SubSubTitle{
+      font-family:verdana;
+      font-size:12px;
+      text-indent:12px;
+      text-align: justify;
+    }
+    .Text{
+      font-family:verdana;
+      font-size:16px;
+      line-height:150%;
+      text-align: justify;
+    }
+    .Text_small{
+      font-family:verdana;
+      font-size:12px;
+      text-indent:40px;
+      text-align: justify;
+    }
+
+  .Information{
+            margin-left: 40;
+            margin-top:14;
+            width: 80%;
+            height:100%;
+            float:left;
+            overflow:auto;
+
+          }
+          .row {
+            display: flex;
+}
+
+.column {
+  flex: 40%;
+  margin-left: 50;
+  margin-right: 50;
+  text-align:justify;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-bottom: 50;
+  margin-right: auto;
+
+}
+a:link {
+
+    color:#000000;
+
+    text-decoration:none;
+
+    }
+
+a:hover {
+  background-color: #809AAB;
+}
+a:visited {
+
+color:#000000;
+
+text-decoration:none;
+
+}
