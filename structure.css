@@ -1,3 +1,7 @@
+html {
+    overflow: hidden;
+    height: 100%;
+}
 
     body {
         margin: 0;
@@ -10,6 +14,7 @@
     }
     .Parent-div{
       position:relative;width:100%;
+
 
     }
     .Header-div{
@@ -80,7 +85,7 @@
   .Information{
             margin-left: 2%;
             margin-top:14;
-            width: 84%;
+            width: 85%;
             height:100%;
             float:left;
             overflow:auto;
