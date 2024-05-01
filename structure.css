@@ -111,6 +111,7 @@ hyphens: auto;
           }
           .row {
             display: flex;
+            margin-bottom: 40px;
 }
 
 .column1 {
