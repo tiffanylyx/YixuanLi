@@ -13,45 +13,12 @@
       <link href="structure.css" rel="stylesheet">
   </head>
     <body>
-      <div class = "Parent-div">
-      <div class = "Header-div">
-      </div>
-
-      <div class = "Sub-div">
-
-        <div class="Selector" id = "Selector">
-          <div style = "width:100%;height:100">
-          </div>
-
-          <div id = "Works">
-            <p class="TitleColumn"> <a href = "./Projects.html"> Works</a> </p>
-              <p class = "SubTitle"> Perception & Expression </p>
-                <p class = "SubSubTitle"><a href="HoagsOLife.html"> HoagsOLife</a> </p>
-                <p class = "SubSubTitle"><a href="Equivalence.html"> Equivalence (2022/2023)</a> </p>
-                <p class = "SubSubTitle"><a href="EmotionNAL.html"> EmotionNAL</a> </p>
-              <p class = "SubTitle"> Technology & Museums  </p>
-                <p class = "SubSubTitle"><a href="DataVisualization.html"> Data Visualization</a> </p>
-                <p class = "SubSubTitle"><a href="ImageProcessing.html"> Image Recognition</a> </p>
-                <p class = "SubSubTitle"><a href="VirtualMuseum.html"> Virtual Museums</a> </p>
-              <p class = "SubTitle"> Educational Technology </p>
-                <p class = "SubSubTitle"><a href="Yousician.html">Redesign Yousician </a></p>
-                <p class = "SubSubTitle"><a href="ContAQT.html">ContAQT System</a></p>
-            </div>
-          <div id = "About_Me">
-            <p class="TitleColumn"> <a href = "./About_Me.html">About Yixuan Li</a> </p>
-          </div>
-          <div id = "Publication">
-            <p class="TitleColumn"> <a href = "./About_Me.html#Info_Publications">Publication</a> </p>
-          </div>
-          <div id = "Contact">
-            <p class="TitleColumn"> <a href = "./About_Me.html#Info_Contact">Contact</a> </p>
-          </div>
-          <div id = "CV">
-            <p class="TitleColumn"> <a href = "https://drive.google.com/file/d/1zNnZ04-1UQUsfbDxwE3M17RjlbLN_TmQ/view?usp=sharing">CV</a> </p>
-          </div>
-
-        </div>
-
+      <div class="Parent-div" style="height:100%">
+        <div class="Header-div"></div>
+        <!-- Sidebar loaded here -->
+        <div class="Sub-div">
+        <div class="Selector" id="sidebar-container"></div>
+        <!-- Main content remains unchanged -->
         <div class = "Information">
           <div style = "width:100%;height:100">
 
@@ -76,8 +43,8 @@
 
             <div class="column">
               <p class = "Text">
-              Yousician is an Educational music app that allows users to learn to play guitar, bass, piano, ukulele, or singing. However, through Contextual Inquiry with the actural users, we discovered some problems with 
-              the orginal App, including the Lack of Engagement, Lack of Authority during the learning process, not providing enough feedback about practice, and very few social elements that keep users connected to their friends. 
+              Yousician is an Educational music app that allows users to learn to play guitar, bass, piano, ukulele, or singing. However, through Contextual Inquiry with the actural users, we discovered some problems with
+              the orginal App, including the Lack of Engagement, Lack of Authority during the learning process, not providing enough feedback about practice, and very few social elements that keep users connected to their friends.
              </p>
 
 
@@ -88,7 +55,7 @@
               <p class = "Text">
                 According to learning science theories, Motivation is a condition that activates and sustains behavior toward a goal.
                 Students who are motivated tend to be engaged, persist longer, have better learning outcomes. In this project, our group emphasized on adopting strategies that promote students' motivation to augment the learning process.
-                
+
               <br>
               </p>
             </div>
@@ -143,7 +110,7 @@
 
             <div class="column">
             <p class = "Text">
-            We have incorporated several iterations of user evaluation and redesign into the process. One user commented, "I want more knowledge about my performance, how I receive my score, and where my score 
+            We have incorporated several iterations of user evaluation and redesign into the process. One user commented, "I want more knowledge about my performance, how I receive my score, and where my score
             is spent." In response, we implemented a credit history page. This feature allows users to see where they earned their credits and view monthly trends, helping them track their practice progress more effectively.
         </p>
 
@@ -151,9 +118,9 @@
 
             <div class="column">
             <p class = "Text">
-                Another user commented that "The entrance could be more flexible, perhaps integrated into the flow of a singing experience." In response, we reorganized the way users can utilize their credits. 
-                Now, instead of merely accumulating credit scores, users can select songs to unlock and practice from the "Song" tab, create a list of their favorite songs and singers, and search for new music. 
-                This provides a more flexible way for users to interact with the system and makes the overall experience feel more natural.   
+                Another user commented that "The entrance could be more flexible, perhaps integrated into the flow of a singing experience." In response, we reorganized the way users can utilize their credits.
+                Now, instead of merely accumulating credit scores, users can select songs to unlock and practice from the "Song" tab, create a list of their favorite songs and singers, and search for new music.
+                This provides a more flexible way for users to interact with the system and makes the overall experience feel more natural.
              </p>
             </div>
 
@@ -168,7 +135,7 @@
 
             <div class="column">
                 <img src="imgs/EduTech/song.gif" alt="" class="center" style="width: 100%;">
-    
+
             </div>
 
           </div>
@@ -197,3 +164,10 @@
 
 
         </html>
+        <script>
+          fetch('sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+              document.getElementById('sidebar-container').innerHTML = data;
+            });
+        </script>

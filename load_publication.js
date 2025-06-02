@@ -7,7 +7,7 @@ d3.csv("document/publication.csv").then(function(data) {
     html += '<p class = "Text" style = "padding-left: 4px;">';
     html += data[i].citation
     if(data[i].Link!=0){
-      html += `<a href=${data[i].Link}>[link]</a>`;}
+      html += `<a class="external" href=${data[i].Link}>[link]</a>`;}
       html += '</p>';
     }
     html += '<br>';

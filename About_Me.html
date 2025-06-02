@@ -14,45 +14,13 @@
    <link href="structure.css" rel="stylesheet">
 </head>
     <body>
-      <div class = "Parent-div" style = "height:100%">
-      <div class = "Header-div">
-      </div>
-
-      <div class = "Sub-div">
-
-        <div class="Selector" id = "Selector">
-          <div style = "width:100%;height:100">
-          </div>
-          <div id = "Works">
-            <p class="TitleColumn"> <a href = "./Projects.html"> Works</a> </p>
-              <p class = "SubTitle"> Perception & Expression </p>
-                <p class = "SubSubTitle"><a href="HoagsOLife.html"> HoagsOLife</a> </p>
-                <p class = "SubSubTitle"><a href="Equivalence.html"> Equivalence (2022/2023)</a> </p>
-                <p class = "SubSubTitle"><a href="EmotionNAL.html"> EmotionNAL</a> </p>
-              <p class = "SubTitle"> Technology & Museums  </p>
-                <p class = "SubSubTitle"><a href="DataVisualization.html"> Data Visualization</a> </p>
-                <p class = "SubSubTitle"><a href="ImageProcessing.html"> Image Recognition</a> </p>
-                <p class = "SubSubTitle"><a href="VirtualMuseum.html"> Virtual Museums</a> </p>
-              <p class = "SubTitle"> Educational Technology </p>
-                <p class = "SubSubTitle"><a href="Yousician.html">Redesign Yousician </a></p>
-                <p class = "SubSubTitle"><a href="ContAQT.html">ContAQT System</a></p>
-            </div>
-          <div id = "About_Me">
-            <p class="TitleColumn"> <a href = "./About_Me.html">About Yixuan Li</a> </p>
-          </div>
-          <div id = "Publication">
-            <p class="TitleColumn"> <a href = "./About_Me.html#Info_Publications">Publication</a> </p>
-          </div>
-          <div id = "Contact">
-            <p class="TitleColumn"> <a href = "./About_Me.html#Info_Contact">Contact</a> </p>
-          </div>
-          <div id = "CV">
-            <p class="TitleColumn"> <a href = "https://drive.google.com/file/d/1zNnZ04-1UQUsfbDxwE3M17RjlbLN_TmQ/view?usp=sharing">CV</a> </p>
-          </div>
-
-        </div>
-
-        <div class = "Information">
+      <div class="Parent-div" style="height:100%">
+        <div class="Header-div"></div>
+        <!-- Sidebar loaded here -->
+        <div class="Sub-div">
+        <div class="Selector" id="sidebar-container"></div>
+        <!-- Main content remains unchanged -->
+        <div class="Information">
           <div style = "width:100%;height:100">
           </div>
           <div style = "width:100%" class="row">>
@@ -66,19 +34,21 @@
             <br>
           <div id = 'Info_Intro'>
             <p class = "Text" style = "text-indent:4px;"> </p>
-            <p class = "Text" style = "text-indent:4px;"> I am Yixuan Li (李, 翊瑄) from Tianjin, China. I'm an HCI researcher and computer scientist based in Atlanta, GA, USA.</p>
-            <p class = "Text" style = "text-indent:4px;"> I do research in data visualization, technologies for novice users, digital humanities, and so on...</p>
-            <p class = "Text" style = "text-indent:4px;"> I create things with my body and represent it with visualization and audio.</p>
-            <p class = "Text" style = "text-indent:4px;"> I want to explore how technologies can shape people's bebavior and promote people's understanding.</p>
-            <p class = "Text" style = "text-indent:4px;"> I would like to trace back to the early history to understand where I'm from and what I represent.</p>
-            <br>
+            <p class = "Text" style = "text-indent:4px;"> I am Yixuan Li (李, 翊瑄) from Tianjin, China.
+              I’m a Ph.D. student in Human-Centered Computing at Georgia Tech advised by Dr. Jessica Roberts in Tiles Lab,
+              where my research focuses on promoting data literacy through data visualization in informal learning environments.
+              I design interactive systems and learning experiences to empower middle school students and public audiences to actively engage with and communicate using data.</p>
+            <p class = "Text" style = "text-indent:4px;"> My work brings together insights from learning sciences, data visualization, and human-computer interaction.
+              I collaborate closely with visualization researchers, K–12 educators, and K-12 students to design and evaluate both educational tools and pedagogical frameworks.
+              Ultimately, I aim to make data more accessible, relatable, and powerful for learners and the general public by leveraging visualization as a tool for both inquiry and communication.</p>
+              <br>
           </div>
 
           <div id = 'Info_Education'>
             <p class = "Title">Education</p>
-            <p class = "Text" style = "padding-left: 4px;"> Ph.D. Student in Human-Centered-Computering at Georgia Institute of Technology. Advised by <a href="https://sites.gatech.edu/tiles/">Dr. Jessica Roberts. (2023 to Now) </p>
-            <p class = "Text" style = "padding-left: 4px;"> MSc in Media, Arts and Technology in UCSB, CA, US. Advised by <a href="http://www.georgelegrady.com/">Prof. George Legrady</a>. (2021 to 2023) </p>
-            <p class = "Text" style = "padding-left: 4px;"> BSc in Data Science in Fudan University, Shanghai, China. Advised by <a href="http://simingchen.me/">Prof. Siming Chen</a>. (2017 to 2021) </p>
+            <p class = "Text" style = "padding-left: 4px;"> Ph.D. Student in Human-Centered-Computering at Georgia Institute of Technology. Advised by <a class="external" href="https://sites.gatech.edu/tiles/">Dr. Jessica Roberts</a>. (2023 to Now) </p>
+            <p class = "Text" style = "padding-left: 4px;"> MSc in Media, Arts and Technology in UCSB, CA, US. Advised by <a class="external" href="http://www.georgelegrady.com/">Prof. George Legrady</a>. (2021 to 2023) </p>
+            <p class = "Text" style = "padding-left: 4px;"> BSc in Data Science in Fudan University, Shanghai, China. Advised by <a class="external" href="http://simingchen.me/">Prof. Siming Chen</a>. (2017 to 2021) </p>
             <br>
           </div>
           <div id = 'Info_Publications'>
@@ -86,11 +56,12 @@
 
           <div id = 'Info_Teaching'>
             <p class = "Title">Teaching</p>
-            <p class = "Text" style = "text-indent:4px;"> Spring 2023 MAT Media Signal Processing, at UCSB </p>
-            <p class = "Text" style = "text-indent:4px;"> <a href = "https://vislab.mat.ucsb.edu/2023.html">Winter 2023 MAT 259 Data Visualization , at UCSB.</a> </p>
-            <p class = "Text" style = "text-indent:4px;"> Fall 2022 MAT 255 Techniques, History & Aesthetics of the Computational Photographic Image, at UCSB. </p>
-            <p class = "Text" style = "text-indent:4px;"> Spring 2022 MAT 255 Computational Asethetics, at UCSB. </p>
-            <p class = "Text" style = "text-indent:4px;"> <a href = "https://vislab.mat.ucsb.edu/2022.html">Winter 2022 MAT 259 Data Visualization, at UCSB.</a> </p>
+            <p class = "Text" style = "text-indent:4px;"> <a class="external" href = "https://cyxiong.com/2025-spring-gatech-cs-6730-data-visualization-principles-applications/">Spring 2025 CS6730 Data Visualization: Principles & Applications</a>, at GaTech. </p>
+            <p class = "Text" style = "text-indent:4px;"> Spring 2023 MAT201A Media Signal Processing, at UCSB </p>
+            <p class = "Text" style = "text-indent:4px;"> <a class="external" href = "https://vislab.mat.ucsb.edu/2023.html">Winter 2023 MAT259 Data Visualization</a>, at UCSB.</p>
+            <p class = "Text" style = "text-indent:4px;"> <a class="external" href = "https://www.mat.ucsb.edu/~g.legrady/academic/courses/22f255/22f255.html">Fall 2022 MAT255 Techniques, History & Aesthetics of the Computational Photographic Image</a>, at UCSB. </p>
+            <p class = "Text" style = "text-indent:4px;"> <a class="external" href = "https://www.mat.ucsb.edu/~g.legrady/academic/courses/22f255/22f255b.html">Spring 2022 MAT255 Computational Asethetics</a>, at UCSB. </p>
+            <p class = "Text" style = "text-indent:4px;"> <a class="external" href = "https://vislab.mat.ucsb.edu/2022.html">Winter 2022 MAT259 Data Visualization</a>, at UCSB. </p>
             <br>
           </div>
 
@@ -98,6 +69,9 @@
             <p class = "Title">Contact</p>
             <p class = "Text" style = "text-indent:4px;"> Technology Square Research Building, 85 5th St NW, Atlanta, GA 30308, United States  </p>
             <p class = "Text" style = "text-indent:4px;"> yixuanli@gatech.edu </p>
+            <p class = "Text" style = "text-indent:4px;"> <a class="external" href = "https://scholar.google.com/citations?user=N6EH0qkAAAAJ&hl=en">Google Scholar Link</a> </p>
+            <p class = "Text" style = "text-indent:4px;"> <a class="external" href = "https://www.linkedin.com/in/yixuanli0822/">LinkedIn Page</a> </p>
+
           </div>
 
           <br>
@@ -118,7 +92,13 @@
 
   </body>
   </html>
-
+  <script>
+    fetch('sidebar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('sidebar-container').innerHTML = data;
+      });
+  </script>
   <script src="https://d3js.org/d3.v6.js"></script>
 <script src = "load_publication.js"></script>
 <script src="sketch.js"></script>

@@ -13,42 +13,12 @@
      <link href="structure.css" rel="stylesheet">
   </head>
     <body>
-      <div class = "Parent-div">
-      <div class = "Header-div">
-      </div>
-      <div class="Selector" id = "Selector">
-        <div style = "width:100%;height:100">
-        </div>
-
-        <div id = "Works">
-          <p class="TitleColumn"> <a href = "./Projects.html"> Works</a> </p>
-            <p class = "SubTitle"> Perception & Expression </p>
-              <p class = "SubSubTitle"><a href="HoagsOLife.html"> HoagsOLife</a> </p>
-              <p class = "SubSubTitle"><a href="Equivalence.html"> Equivalence (2022/2023)</a> </p>
-              <p class = "SubSubTitle"><a href="EmotionNAL.html"> EmotionNAL</a> </p>
-            <p class = "SubTitle"> Technology & Museums  </p>
-              <p class = "SubSubTitle"><a href="DataVisualization.html"> Data Visualization</a> </p>
-              <p class = "SubSubTitle"><a href="ImageProcessing.html"> Image Recognition</a> </p>
-              <p class = "SubSubTitle"><a href="VirtualMuseum.html"> Virtual Museums</a> </p>
-            <p class = "SubTitle"> Educational Technology </p>
-              <p class = "SubSubTitle"><a href="Yousician.html">Redesign Yousician </a></p>
-              <p class = "SubSubTitle"><a href="ContAQT.html">ContAQT System</a></p>
-          </div>
-        <div id = "About_Me">
-          <p class="TitleColumn"> <a href = "./About_Me.html">About Yixuan Li</a> </p>
-        </div>
-        <div id = "Publication">
-          <p class="TitleColumn"> <a href = "./About_Me.html#Info_Publications">Publication</a> </p>
-        </div>
-        <div id = "Contact">
-          <p class="TitleColumn"> <a href = "./About_Me.html#Info_Contact">Contact</a> </p>
-        </div>
-        <div id = "CV">
-          <p class="TitleColumn"> <a href = "https://drive.google.com/file/d/1zNnZ04-1UQUsfbDxwE3M17RjlbLN_TmQ/view?usp=sharing">CV</a> </p>
-        </div>
-
-      </div>
-      
+      <div class="Parent-div" style="height:100%">
+        <div class="Header-div"></div>
+        <!-- Sidebar loaded here -->
+        <div class="Sub-div">
+        <div class="Selector" id="sidebar-container"></div>
+        <!-- Main content remains unchanged -->
         <div class = "Information">
           <div style = "width:100%;height:100">
           </div>
@@ -120,3 +90,10 @@ Diverse Interaction Recommendation for Public Users Exploring Multi-view Visuali
 
 
         </html>
+        <script>
+          fetch('sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+              document.getElementById('sidebar-container').innerHTML = data;
+            });
+        </script>
