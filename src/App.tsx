@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Mail, GraduationCap, Linkedin } from 'lucide-react';
 import './App.css';
+
 const base = import.meta.env.BASE_URL;
+
 // Sections
 import About from './sections/About';
 import News from './sections/News';
@@ -145,7 +147,7 @@ function App() {
         </div>
       </aside>
 
-      {/* ================= Mobile Header ================= */}
+      {/* ================= Mobile Header (fixed, nav only) ================= */}
       <header className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-[#f9f9f9]/95 backdrop-blur-sm border-b border-[#e0e0e0]/50">
         <div className="flex items-center justify-between px-4 py-3">
           <div>
@@ -154,9 +156,12 @@ function App() {
               PhD student at Human-Centered Computing
             </p>
           </div>
+
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 text-[#666] hover:text-[#333] transition-colors"
+            aria-label="Toggle menu"
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -183,7 +188,48 @@ function App() {
 
       {/* ================= Main Content ================= */}
       <main className="lg:ml-[400px] min-h-screen">
-        <div className="max-w-[800px] mx-auto px-6 lg:px-12 py-8 lg:py-16 pt-20 lg:pt-16">
+        <div className="max-w-[800px] mx-auto px-6 lg:px-12 py-8 lg:py-16 pt-16 lg:pt-16">
+          {/* ===== Mobile Profile (scrolls with page) ===== */}
+          <div className="lg:hidden mt-6 mb-10">
+            <div className="flex flex-col items-center text-center">
+              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#6b8e6b] to-[#4a6b4a] p-1 shadow-lg mb-4">
+                <img
+                  src={`${base}headshot.jpg`}
+                  alt="Yixuan Li headshot"
+                  className="w-full h-full rounded-full object-cover bg-white"
+                />
+              </div>
+
+              <h1 className="text-xl font-bold text-[#333] tracking-tight">
+                Yixuan Li
+              </h1>
+              <p className="text-sm text-[#666] mt-1">
+                PhD student at Human-Centered Computing
+              </p>
+              <p className="text-sm text-[#6b8e6b] mt-0.5">
+                Georgia Institute of Technology
+              </p>
+
+              <div className="flex gap-3 mt-4 justify-center">
+                {socialLinks.map(({ icon: Icon, href, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    aria-label={label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2.5 rounded-full bg-white border border-[#e0e0e0]
+                               text-[#666] hover:text-[#6b8e6b]
+                               hover:border-[#6b8e6b]
+                               transition-all duration-200 shadow-sm"
+                  >
+                    <Icon size={20} />
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
           <About />
           <News />
           <Publications />
