@@ -8,7 +8,7 @@ import { inspectAttr } from 'kimi-plugin-inspect-react'
 // 1. 如果仓库名为 username.github.io，使用 base: '/'
 // 2. 如果仓库名为其他（如 my-website），使用 base: '/my-website/'
 export default defineConfig({
-  base: '/',
+  base: '/YixuanLi/',
   plugins: [inspectAttr(), react()],
   resolve: {
     alias: {
