@@ -234,7 +234,7 @@ export default function CV() {
           </h3>
           <div className="space-y-2 text-[#666]">
             <p>
-              <span className="font-medium">Email</span>
+              <span className="font-medium">Email: </span>
               <a href="mailto:yixuanli@gatech.edu" className="text-[#6b8e6b] hover:underline">
                 yixuanli@gatech.edu
               </a>
