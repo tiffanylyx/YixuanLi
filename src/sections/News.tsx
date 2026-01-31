@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Award, FileText, Mic, Briefcase, Trophy, BookCheck } from 'lucide-react';
+import { FileText, Mic, BookCheck } from 'lucide-react';
 
 const newsItems = [
   {

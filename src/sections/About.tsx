@@ -1,11 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Mail, GraduationCap, Github, Linkedin } from 'lucide-react';
 
-const socialLinks = [
-  { icon: Mail, href: 'mailto:yixuanli@gatech.edu', label: 'Email' },
-  { icon: GraduationCap, href: 'https://scholar.google.com/citations?user=N6EH0qkAAAAJ&hl=en', label: 'Google Scholar' },
-  { icon: Linkedin, href: 'https://www.linkedin.com/in/yixuanli0822/', label: 'LinkedIn' },
-];
 
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);

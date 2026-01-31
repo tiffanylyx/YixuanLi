@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-import { Download, GraduationCap, Briefcase, Award, FileText } from 'lucide-react';
+import { Download, GraduationCap, Briefcase, FileText } from 'lucide-react';
 
 const education = [
   {
     degree: 'Ph.D. Student in Human-Centered-Computering',
     institution: 'Georgia Institute of Technology, US',
-    period: '2022 - Now',
+    period: '2023 - Now',
     advisor: (
   <a
     href="https://jessicaannroberts.com/"
@@ -117,12 +117,12 @@ const experience = [
   },
 ];
 
-const awards = [
-  { name: '清华大学研究生学术新秀', year: '2024' },
-  { name: '国家奖学金', year: '2023, 2024' },
-  { name: 'ACL Outstanding Paper Award', year: '2024' },
-  { name: '优秀本科生毕业论文', year: '2022' },
-];
+// const awards = [
+//   { name: '清华大学研究生学术新秀', year: '2024' },
+//   { name: '国家奖学金', year: '2023, 2024' },
+//   { name: 'ACL Outstanding Paper Award', year: '2024' },
+//   { name: '优秀本科生毕业论文', year: '2022' },
+// ];
 
 export default function CV() {
   const sectionRef = useRef<HTMLElement>(null);

@@ -6,7 +6,6 @@ import './App.css';
 import About from './sections/About';
 import News from './sections/News';
 import Publications from './sections/Publications';
-import Projects from './sections/Projects';
 import CV from './sections/CV';
 
 const navItems = [
