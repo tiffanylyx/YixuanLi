@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 
-
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);

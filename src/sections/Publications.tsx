@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { FileText, ExternalLink, Award, Video, Package } from 'lucide-react';
-
+const base = import.meta.env.BASE_URL;
 const publications = [
   {
     title: 'Teaching Air Quality and Data Visualization Using Tangible Models for Middle Schoolers',
@@ -10,9 +10,9 @@ const publications = [
     type: 'Workshop Paper',
     award: null,
     links: {
-      pdf: '/document/paper/EduVis2025.pdf',
+      pdf: `${base}document/paper/EduVis2025.pdf`,
       doi: 'https://ieeexplore.ieee.org/abstract/document/11298879',
-      materials: '/document/materials/Skittles-worksheet.pdf', // ← 新增（可选）
+      materials: `${base}document/materials/Skittles-worksheet.pdf`, // ← 新增（可选）
     },
   },
   {
@@ -23,7 +23,7 @@ const publications = [
     type: 'Short Paper',
     award: null,
     links: {
-      pdf: '/document/paper/VIS2025.pdf',
+      pdf: `${base}document/paper/VIS2025.pdf`,
       doi: 'https://ieeexplore.ieee.org/abstract/document/11298733',
     },
   },
@@ -35,10 +35,10 @@ const publications = [
     type: 'Full Paper',
     award: null,
     links: {
-      pdf: '/document/paper/EuroVis2025.pdf',
+      pdf: `${base}document/paper/EuroVis2025.pdf`,
       doi: 'https://diglib.eg.org/items/2d9174ce-6e19-4104-8822-b2a651cd620a',
       video: 'https://youtu.be/X2RD7ZvhIsc',
-      materials: '/document/materials/DPY-worksheep.pdf', // ← 新增
+      materials: `${base}document/materials/DPV-worksheet.pdf`, // ← 新增
     },
   },
   {
@@ -50,7 +50,7 @@ const publications = [
     type: 'Poster Paper',
     award: null,
     links: {
-      pdf: '/document/paper/CSCL2025.pdf',
+      pdf: `${base}document/paper/CSCL2025.pdf`,
       doi: 'https://doi.org/10.22318/cscl2025.100413',
     },
   },
@@ -63,7 +63,7 @@ const publications = [
     type: 'Workshop Paper',
     award: null,
     links: {
-      pdf: '/document/paper/GenAICHI2024.pdf',
+      pdf: `${base}document/paper/GenAICHI2024.pdf`,
       doi: 'https://arxiv.org/pdf/2404.18385',
       video: 'https://youtu.be/LRD1PXQiRIU'
     },
@@ -77,7 +77,7 @@ const publications = [
     type: 'Full Paper',
     award: null,
     links: {
-      pdf: '/document/paper/TVCG2022.pdf',
+      pdf: `${base}document/paper/VIS2022.pdf`,
       doi: 'https://ieeexplore.ieee.org/abstract/document/9903596',
       video: 'https://youtu.be/PxR0OxZnb8s'
     },

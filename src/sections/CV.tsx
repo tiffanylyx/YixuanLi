@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Download, GraduationCap, Briefcase, FileText } from 'lucide-react';
-
+const base = import.meta.env.BASE_URL;
 const education = [
   {
     degree: 'Ph.D. Student in Human-Centered-Computering',
@@ -161,7 +161,7 @@ export default function CV() {
       {/* Download Button */}
       <div className="mb-8">
         <a
-          href="document/Yixuan_CV.pdf"
+          href={`${base}document/Yixuan_CV.pdf`}
           className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#6b8e6b] text-white rounded-lg hover:bg-[#5a7a5a] transition-colors font-medium shadow-sm"
         >
           <Download size={18} />

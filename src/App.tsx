@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Mail, GraduationCap, Linkedin } from 'lucide-react';
 import './App.css';
-
+const base = import.meta.env.BASE_URL;
 // Sections
 import About from './sections/About';
 import News from './sections/News';
@@ -84,7 +84,7 @@ function App() {
             {/* Headshot */}
             <div className="w-44 h-44 rounded-full bg-gradient-to-br from-[#6b8e6b] to-[#4a6b4a] p-1 shadow-lg mb-5">
               <img
-                src="/headshot.jpg"
+                src={`${base}headshot.jpg`}
                 alt="Yixuan Li headshot"
                 className="w-full h-full rounded-full object-cover bg-white
                            hover:scale-105 transition-transform duration-300"
