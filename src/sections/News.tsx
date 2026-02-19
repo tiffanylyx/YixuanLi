@@ -3,6 +3,13 @@ import { FileText, Mic, BookCheck } from 'lucide-react';
 
 const newsItems = [
   {
+    date: 'Feb 2026',
+    icon: FileText,
+    content:
+      "My first-author paper 'Towards an Empirical Understanding of Epistemic Data Agency for Middle School Students During a Data Storytelling Summer Camp' has been conditionally accepted by ICLS 2026!",
+    highlight: true,
+  },
+  {
     date: 'Jan 2026',
     icon: FileText,
     content:
