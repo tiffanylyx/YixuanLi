@@ -3,6 +3,18 @@ import { FileText, ExternalLink, Award, Video, Package } from 'lucide-react';
 const base = import.meta.env.BASE_URL;
 const publications = [
   {
+    title: 'ContAQT: Designing an Interactive Data Display to Make Multi-Pollutant Air Quality Data Accessible',
+    authors: ['Yixuan Li', 'Jordan Hill', 'Zeyu Hua', 'Seik Oh', 'Yuhan Wang','Alex Endert', 'Jessica Roberts'],
+    venue: '2026 CHI Conference on Human Factors in Computing Systems (CHI)',
+    year: '2026',
+    type: 'Full Paper',
+    award: null,
+    links: {
+      pdf: `${base}document/paper/CHI2026.pdf`,
+      doi: 'https://dl.acm.org/doi/proceedings/10.1145/3772318',
+    },
+  },
+  {
     title: 'Teaching Air Quality and Data Visualization Using Tangible Models for Middle Schoolers',
     authors: ['Yixuan Li', 'Alex Endert', 'Jessica Roberts'],
     venue: '2025 IEEE VIS Workshop on Visualization Education, Literacy, and Activities (EduVIS)',

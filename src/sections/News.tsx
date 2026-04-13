@@ -13,7 +13,7 @@ const newsItems = [
     date: 'Jan 2026',
     icon: FileText,
     content:
-      "My first-author paper 'ContAQT: Designing an Interactive Data Display to Make Multi-Pollutant Air Quality Data Accessible' has been conditionally accepted by CHI 2026!",
+      "My first-author paper 'ContAQT: Designing an Interactive Data Display to Make Multi-Pollutant Air Quality Data Accessible' has been accepted by CHI 2026!",
     highlight: true,
   },
   {
