@@ -11,7 +11,7 @@ const publications = [
     award: null,
     links: {
       pdf: `${base}document/paper/CHI2026.pdf`,
-      doi: 'https://dl.acm.org/doi/proceedings/10.1145/3772318',
+      doi: 'https://dl.acm.org/doi/10.1145/3772318.3790975',
     },
   },
   {
