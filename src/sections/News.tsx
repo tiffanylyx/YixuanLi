@@ -3,6 +3,12 @@ import { FileText, Mic, BookCheck } from 'lucide-react';
 
 const newsItems = [
   {
+    date: 'April 2026',
+    icon: BookCheck,
+    content: `I passed my Ph.D. dissertation proposal! In the following two years, I will work on understanding and supporting how K–12 students develop data literacy and epistemic agency through decision-rich data visualization learning experiences.`,
+    highlight: false,
+  },
+  {
     date: 'Feb 2026',
     icon: FileText,
     content:
