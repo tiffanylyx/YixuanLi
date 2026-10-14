@@ -42,6 +42,27 @@ npm run build
 
 每次推送到 `main` 分支时，GitHub Actions 会自动构建并部署网站。
 
+## 自动更新 CV PDF
+
+GitHub Pages workflow 会在以下情况从私有仓库
+[`tiffanylyx/Yixuan_CV`](https://github.com/tiffanylyx/Yixuan_CV) 读取并编译
+`main.tex`，然后把生成的 PDF 部署到网站：
+
+- 网站的 `main` 分支有新提交时
+- 手动运行 workflow 时
+- 每小时的第 17 分钟
+
+第一次使用前，需要在 `YixuanLi` 仓库的 **Settings → Secrets and
+variables → Actions** 中添加名为 `CV_REPO_TOKEN` 的 secret。它应当是一个
+仅允许访问 `Yixuan_CV` 仓库、并且只有 **Contents: Read-only** 权限的
+fine-grained personal access token。
+
+Overleaf 与 GitHub 的同步不是自动执行的。在 Overleaf 修改完成后，先通过
+**Integrations → GitHub → Push Overleaf changes to GitHub** 将修改推送到
+`Yixuan_CV/main`。网站会在下一次定时运行时自动获取、编译并部署新版本；也可以
+进入 `YixuanLi` 的 **Actions → Deploy static content to Pages → Run workflow**
+立即更新。
+
 ## 自定义内容
 
 编辑 `src/sections/` 目录下的文件来修改内容：

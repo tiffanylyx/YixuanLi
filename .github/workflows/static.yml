@@ -4,6 +4,9 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
+  schedule:
+    # Refresh the deployed CV every hour after Overleaf changes reach GitHub.
+    - cron: "17 * * * *"
 
 permissions:
   contents: read
@@ -17,9 +20,27 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      - name: Checkout
+      - name: Checkout website
         uses: actions/checkout@v4
+
+      - name: Checkout CV source
+        uses: actions/checkout@v4
+        with:
+          repository: tiffanylyx/Yixuan_CV
+          ref: main
+          token: ${{ secrets.CV_REPO_TOKEN }}
+          path: .cv-source
+
+      - name: Compile CV PDF
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: main.tex
+          working_directory: .cv-source
+
+      - name: Use the latest CV on the website
+        run: cp .cv-source/main.pdf public/document/Yixuan_CV.pdf
 
       - name: Setup Node
         uses: actions/setup-node@v4
