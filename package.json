@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "npm run publications:sync",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
+    "publications:sync": "node scripts/sync-publications.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

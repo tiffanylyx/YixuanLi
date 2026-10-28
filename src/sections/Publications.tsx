@@ -1,100 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { FileText, ExternalLink, Award, Video, Package } from 'lucide-react';
+import { publications } from '../data/publications';
+
 const base = import.meta.env.BASE_URL;
-const publications = [
-  {
-    title: 'ContAQT: Designing an Interactive Data Display to Make Multi-Pollutant Air Quality Data Accessible',
-    authors: ['Yixuan Li', 'Jordan Hill', 'Zeyu Hua', 'Seik Oh', 'Yuhan Wang','Alex Endert', 'Jessica Roberts'],
-    venue: '2026 CHI Conference on Human Factors in Computing Systems (CHI)',
-    year: '2026',
-    type: 'Full Paper',
-    award: null,
-    links: {
-      pdf: `${base}document/paper/CHI2026.pdf`,
-      doi: 'https://dl.acm.org/doi/10.1145/3772318.3790975',
-    },
-  },
-  {
-    title: 'Teaching Air Quality and Data Visualization Using Tangible Models for Middle Schoolers',
-    authors: ['Yixuan Li', 'Alex Endert', 'Jessica Roberts'],
-    venue: '2025 IEEE VIS Workshop on Visualization Education, Literacy, and Activities (EduVIS)',
-    year: '2025',
-    type: 'Workshop Paper',
-    award: null,
-    links: {
-      pdf: `${base}document/paper/EduVis2025.pdf`,
-      doi: 'https://ieeexplore.ieee.org/abstract/document/11298879',
-      materials: `${base}document/materials/Skittles-worksheet.pdf`, // ← 新增（可选）
-    },
-  },
-  {
-    title: 'From Perception to Decision: Assessing the Role of Chart Type Affordances in High-Level Decision Tasks',
-    authors: ['Yixuan Li', 'Emery D Berger', 'Minsuk Kahng', 'Cindy Xiong Bearfield'],
-    venue: '2025 IEEE Visualization and Visual Analytics (VIS)',
-    year: '2025',
-    type: 'Short Paper',
-    award: null,
-    links: {
-      pdf: `${base}document/paper/VIS2025.pdf`,
-      doi: 'https://ieeexplore.ieee.org/abstract/document/11298733',
-    },
-  },
-  {
-    title: 'DPV (Domain, Purpose, Visual) Framework: A data visualization design pedagogical method for middle schoolers',
-    authors: ['Yixuan Li', 'Alex Endert', 'Jessica Roberts'],
-    venue: 'EuroVis 2025',
-    year: '2025',
-    type: 'Full Paper',
-    award: null,
-    links: {
-      pdf: `${base}document/paper/EuroVis2025.pdf`,
-      doi: 'https://diglib.eg.org/items/2d9174ce-6e19-4104-8822-b2a651cd620a',
-      video: 'https://youtu.be/X2RD7ZvhIsc',
-      materials: `${base}document/materials/DPV-worksheet.pdf`, // ← 新增
-    },
-  },
-  {
-    title: 'Skills and Dispositions for PFL: Promoting Data Literacy for Middle School Students in a Summer Camp',
-    authors: ['Yixuan Li', 'Alex Endert', 'Christine Fry Wise', 'et al.'],
-    venue:
-      '18th International Conference on Computer-Supported Collaborative Learning (CSCL) 2025-CSCL Proceedings',
-    year: '2025',
-    type: 'Poster Paper',
-    award: null,
-    links: {
-      pdf: `${base}document/paper/CSCL2025.pdf`,
-      doi: 'https://doi.org/10.22318/cscl2025.100413',
-    },
-  },
-  {
-    title:
-      "Equivalence: An analysis of artists' roles with Image Generative AI from Conceptual Art perspective through an interactive installation design practice",
-    authors: ['Yixuan Li', 'Dan C Baciu', 'Marcos Novak', 'George Legrady'],
-    venue: 'Generative AI and HCI workshop at CHI 2024',
-    year: '2024',
-    type: 'Workshop Paper',
-    award: null,
-    links: {
-      pdf: `${base}document/paper/GenAICHI2024.pdf`,
-      doi: 'https://arxiv.org/pdf/2404.18385',
-      video: 'https://youtu.be/LRD1PXQiRIU'
-    },
-  },
-  {
-    title:
-      'Diverse interaction recommendation for public users exploring multi-view visualization using deep learning',
-    authors: ['Yixuan Li', 'Yusheng Qi', 'Yang Sh', 'et al.'],
-    venue: 'IEEE Transactions on Visualization and Computer Graphics',
-    year: '2022',
-    type: 'Full Paper',
-    award: null,
-    links: {
-      pdf: `${base}document/paper/VIS2022.pdf`,
-      doi: 'https://ieeexplore.ieee.org/abstract/document/9903596',
-      video: 'https://youtu.be/PxR0OxZnb8s'
-    },
-  },
-];
+
+const publicationUrl = (url: string) =>
+  /^https?:\/\//i.test(url) ? url : `${base}${url.replace(/^\/+/, '')}`;
 
 export default function Publications() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -131,9 +42,9 @@ export default function Publications() {
       </h2>
 
       <div className="space-y-5">
-        {publications.map((pub, index) => (
+        {publications.map((pub) => (
           <div
-            key={index}
+            key={pub.order}
             className="bg-white border border-[#e0e0e0] rounded-lg p-5 hover:shadow-md hover:border-[#6b8e6b]/30 transition-all duration-300"
           >
             <div className="flex items-start justify-between gap-4">
@@ -175,25 +86,33 @@ export default function Publications() {
                 </div>
 
                 <div className="flex flex-wrap gap-4">
-                  <a
-                    href={pub.links.pdf}
-                    className="inline-flex items-center gap-1.5 text-sm text-[#666] hover:text-[#6b8e6b] transition-colors"
-                  >
-                    <FileText size={14} />
-                    PDF
-                  </a>
+                  {pub.links.pdf && (
+                    <a
+                      href={publicationUrl(pub.links.pdf)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm text-[#666] hover:text-[#6b8e6b] transition-colors"
+                    >
+                      <FileText size={14} />
+                      PDF
+                    </a>
+                  )}
 
-                  <a
-                    href={pub.links.doi}
-                    className="inline-flex items-center gap-1.5 text-sm text-[#666] hover:text-[#6b8e6b] transition-colors"
-                  >
-                    <ExternalLink size={14} />
-                    LINK
-                  </a>
+                  {pub.links.external && (
+                    <a
+                      href={publicationUrl(pub.links.external)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm text-[#666] hover:text-[#6b8e6b] transition-colors"
+                    >
+                      <ExternalLink size={14} />
+                      LINK
+                    </a>
+                  )}
 
                   {pub.links.video && (
                     <a
-                      href={pub.links.video}
+                      href={publicationUrl(pub.links.video)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 text-sm text-[#666] hover:text-[#6b8e6b] transition-colors"
@@ -205,7 +124,7 @@ export default function Publications() {
 
                   {pub.links.materials && (
                     <a
-                      href={pub.links.materials}
+                      href={publicationUrl(pub.links.materials)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 text-sm text-[#666] hover:text-[#6b8e6b] transition-colors"

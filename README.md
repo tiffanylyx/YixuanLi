@@ -75,6 +75,28 @@ Overleaf 与 GitHub 的同步不是自动执行的。在 Overleaf 修改完成�
 | `Projects.tsx` | 研究项目 |
 | `CV.tsx` | 简历信息 |
 
+### 用 Excel 更新论文列表
+
+论文信息现在集中在项目根目录的 `publications.xlsx`，不需要再手动修改
+`Publications.tsx`。
+
+1. 在 Excel 中打开工作簿，在 `Publications` 表格中新增或修改一行。
+2. 作者之间用英文分号 `;` 分隔。
+3. 网站内的 PDF 或材料使用 `/document/...` 路径；外部链接使用完整的
+   `https://...` 地址。
+4. 保存工作簿后运行：
+
+```bash
+npm run publications:sync
+```
+
+脚本会检查必填字段、年份、排序编号和链接格式，然后更新
+`src/data/publications.ts`。`npm run build` 也会自动先执行同步。
+
+新增论文时，直接在表格最后新增一行，把 `Order` 填成当前最大值加 1。数字越大，
+网站显示越靠前，所以不需要重新编号旧论文。`Show` 填 `No` 可以暂时隐藏一条记录。
+不要直接编辑生成的 `src/data/publications.ts`。
+
 ## 技术栈
 
 - React 18
